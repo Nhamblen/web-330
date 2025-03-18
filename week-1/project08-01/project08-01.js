@@ -11,6 +11,24 @@
 */
 
 /*--------------- Object Code --------------------*/
+function timer(min, sec) {
+  this.min = min;
+  this.sec = sec;
+  this.timeID = null;
+
+  timer.prototype.runPause = function (timer, minBox, secBox) {
+    if (this.timeID) {
+      // if the timer is running, stop it
+      window.clearInterval(this.timeID);
+      this.timeID = null;
+    } else {
+      // if the timer is not running, start it
+      this.timeID = window.setInterval(() => {
+        countdown(minBox, secBox);
+      }, 1000);
+    }
+  };
+}
 
 /*---------------Interface Code -----------------*/
 
