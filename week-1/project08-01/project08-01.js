@@ -27,6 +27,21 @@ function timer(min, sec) {
         countdown(minBox, secBox);
       }, 1000);
     }
+
+    function countdown(timer, minBox, secBox) {
+      if (timer.seconds > 0) {
+        timer.seconds--; // decreases seconds
+      } else if (timer.minutes > 0) {
+        timer.minutes--; // decreases minutes
+        timer.seconds = 59;
+      } else {
+        window.clearInterval(timer.timeID);
+        timer.timeID = null;
+      }
+
+      minBox.value = timer.minutes;
+      secBox.value = timer.seconds;
+    }
   };
 }
 
