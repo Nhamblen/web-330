@@ -9,3 +9,28 @@
 */
 
 /* Your CSS goes here */
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Main styles */
+body {
+  height: 100vh; /* Sets view to 100vh */
+  display: flex;
+  justify-content: center; /* Centers the characterForm */
+  align-items: center;
+}
+
+#characterForm {
+  display: flex;
+  flex-direction: column;
+}
+
+#characterForm > *:not(label) {
+  padding: 0.5rem; /* Padding for child elements of characterForm (except labels) */
+  margin-bottom: 1rem; /* Spacing between the buttons/boxes */
+}
