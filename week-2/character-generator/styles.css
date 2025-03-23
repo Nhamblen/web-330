@@ -23,11 +23,22 @@ body {
   display: flex;
   justify-content: center; /* Centers the characterForm */
   align-items: center;
+  background-image: url("runescape.gif"); /* Animated runescape background */
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
 }
 
+/* Character form styles */
 #characterForm {
+  padding: 5rem;
+  margin-top: 10rem;
   display: flex;
   flex-direction: column;
+  background-image: url("scroll.jpg"); /* Scroll character form background */
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
 }
 
 #characterForm > *:not(label) {
