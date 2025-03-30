@@ -20,3 +20,13 @@ let accOption = document.getElementById('accOption');
 let region = document.getElementById('region');
 let miles = document.getElementById('miles');
 let comments = document.getElementById('comments');
+
+// Retrieve the stored data from sessionStorage and assign it to the form fields
+riderName.value = sessionStorage.getItem('riderName');
+ageGroup.value = sessionStorage.getItem('ageGroup');
+bikeOption.value = sessionStorage.getItem('bikeOption');
+routeOption.value = sessionStorage.getItem('routeOption');
+accOption.value = sessionStorage.getItem('accOption');
+region.value = sessionStorage.getItem('region');
+miles.value = sessionStorage.getItem('miles');
+comments.value = sessionStorage.getItem('comments');
