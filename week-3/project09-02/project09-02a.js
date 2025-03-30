@@ -20,3 +20,22 @@ let accOption = document.getElementById('accOption');
 let region = document.getElementById('region');
 let miles = document.getElementById('miles');
 let comments = document.getElementById('comments');
+
+// Adds button event listener and showData() function when clicked
+let button = document.getElementById('submitButton');
+button.addEventListener('click', showData);
+
+function showData() {
+  // Save the form data into sessionStorage (key, value)
+  sessionStorage.setItem('riderName', riderName.value);
+  sessionStorage.setItem('ageGroup', ageGroup.value);
+  sessionStorage.setItem('bikeOption', bikeOption.value);
+  sessionStorage.setItem('routeOption', routeOption.value);
+  sessionStorage.setItem('accOption', accOption.value);
+  sessionStorage.setItem('region', region.value);
+  sessionStorage.setItem('miles', miles.value);
+  sessionStorage.setItem('comments', comments.value);
+
+  // Redirect the user to another page after saving data
+  location.href = 'project09-02b.html';
+}
