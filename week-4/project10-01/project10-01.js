@@ -43,23 +43,47 @@ for (let i = 0; i < 48; i++) {
 // Node list representing the puzzle pieces
 let pieces = document.querySelectorAll('div#puzzleBoard img');
 
-// For loop to grab a piece on pointer down (loops through every piece and attaches event listener)
+// Loop through each puzzle piece and attach an event listener (for when the user presses down on it)
 for (let i = 0; i < pieces.length; i++) {
   pieces[i].addEventListener('pointerdown', grabPiece);
 }
 
+// Called when a puzzle piece is grabbed
 function grabPiece(e) {
+  // Record the initial pointer position
   pointerX = e.clientX;
   pointerY = e.clientY;
 
+  // Disable default touch behavior (like scrolling or zooming)
   e.target.style.touchAction = 'none';
 
+  // Bring this piece to the front by increasing its z-index
   zCounter++;
   e.target.style.zIndex = zCounter;
 
+  // Record the piece's current position
   pieceX = e.target.offsetLeft;
   pieceY = e.target.offsetTop;
 
+  // Add event listeners to move the piece while dragging and to drop it when released
   e.target.addEventListener('pointermove', movePiece);
   e.target.addEventListener('pointerup', dropPiece);
+}
+
+// Called as the user moves the pointer while holding the piece
+function movePiece(e) {
+  // Calculate the difference between the current and initial pointer positions
+  let diffX = e.clientX - pointerX;
+  let diffY = e.clientY - pointerY;
+
+  // Move the piece by updating its position based on the pointer movement
+  e.target.style.left = pieceX + diffX + 'px';
+  e.target.style.top = pieceY + diffY + 'px';
+}
+
+// Called when the user releases the piece
+function dropPiece(e) {
+  // Remove the event listeners when dragging is done
+  e.target.removeEventListener('pointermove', movePiece);
+  e.target.removeEventListener('pointerup', dropPiece);
 }
