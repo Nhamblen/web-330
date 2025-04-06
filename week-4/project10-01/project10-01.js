@@ -48,4 +48,18 @@ for (let i = 0; i < pieces.length; i++) {
   pieces[i].addEventListener('pointerdown', grabPiece);
 }
 
+function grabPiece(e) {
+  pointerX = e.clientX;
+  pointerY = e.clientY;
 
+  e.target.style.touchAction = 'none';
+
+  zCounter++;
+  e.target.style.zIndex = zCounter;
+
+  pieceX = e.target.offsetLeft;
+  pieceY = e.target.offsetTop;
+
+  e.target.addEventListener('pointermove', movePiece);
+  e.target.addEventListener('pointerup', dropPiece);
+}
