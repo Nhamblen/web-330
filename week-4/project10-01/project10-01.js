@@ -42,3 +42,10 @@ for (let i = 0; i < 48; i++) {
 
 // Node list representing the puzzle pieces
 let pieces = document.querySelectorAll('div#puzzleBoard img');
+
+// For loop to grab a piece on pointer down (loops through every piece and attaches event listener)
+for (let i = 0; i < pieces.length; i++) {
+  pieces[i].addEventListener('pointerdown', grabPiece);
+}
+
+
