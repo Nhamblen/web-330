@@ -27,7 +27,7 @@ function reserveTable(tableNumber, callback, time) {
   } else {
     table.isReserved = true; // Mark the table as reserved
 
-    // Simulate a delay with setTimeout
+    // Delay with setTimeout
     setTimeout(() => {
       callback(`Table ${tableNumber} successfully reserved!`);
     }, time); // time in milliseconds
@@ -38,5 +38,19 @@ function reserveTable(tableNumber, callback, time) {
 document
   .getElementById('reservationForm')
   .addEventListener('submit', function (e) {
-    // Add your code here
+    // Prevent the default form submission behavior
+    e.preventDefault();
+
+    // Get the user's name and selected table number
+    const name = document.getElementById('name').value;
+    const tableNumber = parseInt(document.getElementById('tableNumber').value);
+
+    // Call the reserveTable function with a callback that updates the webpage
+    reserveTable(
+      tableNumber,
+      function (message) {
+        document.getElementById('message').textContent = message;
+      },
+      2000
+    ); // Wait 2 seconds before showing the success message
   });
