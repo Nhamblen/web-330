@@ -10,7 +10,10 @@
 
 // Create an in-memory object array for each table in the restaurant
 let tables = [
-  // Add your table objects here
+  { tableNumber: 1, capacity: 2, isReserved: false },
+  { tableNumber: 2, capacity: 4, isReserved: false },
+  { tableNumber: 3, capacity: 4, isReserved: false },
+  { tableNumber: 4, capacity: 6, isReserved: false },
 ];
 
 // Create a function reserveTable
