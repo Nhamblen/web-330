@@ -18,7 +18,20 @@ let tables = [
 
 // Create a function reserveTable
 function reserveTable(tableNumber, callback, time) {
-  // Add your code here
+  // Find the table based on table number
+  const table = tables.find((t) => t.tableNumber === tableNumber);
+
+  // Check if the table is available
+  if (table.isReserved) {
+    callback(`Sorry, Table ${tableNumber} is already reserved.`);
+  } else {
+    table.isReserved = true; // Mark the table as reserved
+
+    // Simulate a delay with setTimeout
+    setTimeout(() => {
+      callback(`Table ${tableNumber} successfully reserved!`);
+    }, time); // time in milliseconds
+  }
 }
 
 // When the form is submitted, call the reserveTable function
