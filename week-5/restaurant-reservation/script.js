@@ -3,9 +3,9 @@
   Chapter 2
   Programming Assignment
 
-  Author:
-  Date:
-  Filename:
+  Author: Noah Hamblen
+  Date: 4/12/25
+  Filename: script.js
 */
 
 // Create an in-memory object array for each table in the restaurant
@@ -20,7 +20,7 @@ function reserveTable(tableNumber, callback, time) {
 
 // When the form is submitted, call the reserveTable function
 document
-  .getElementById("reservationForm")
-  .addEventListener("submit", function (e) {
+  .getElementById('reservationForm')
+  .addEventListener('submit', function (e) {
     // Add your code here
   });
