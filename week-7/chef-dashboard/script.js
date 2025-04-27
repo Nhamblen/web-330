@@ -3,12 +3,12 @@
   Chapter 3
   Programming Assignment
 
-  Author:
-  Date:
-  Filename: chefs.js
+  Author: Noah Hamblen
+  Date: 4/26/25
+  Filename: script.js
 */
 
-"use strict";
+'use strict';
 
 // TODO: Define an array of chef objects
 let chefs = [
