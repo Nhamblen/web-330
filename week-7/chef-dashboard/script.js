@@ -13,6 +13,24 @@
 // TODO: Define an array of chef objects
 let chefs = [
   // Each chef object should have a name, specialty, weakness, and restaurantLocation
+  {
+    name: 'Gordon Ramsay',
+    specialty: 'British cuisine',
+    weakness: 'Patience',
+    restaurantLocation: 'London, UK',
+  },
+  {
+    name: 'Noah Hamblen',
+    specialty: 'American cuisine',
+    weakness: 'Cooking',
+    restaurantLocation: 'Omaha, NE',
+  },
+  {
+    name: 'Guy Fieri',
+    specialty: 'Diners',
+    weakness: 'Lack of training',
+    restaurantLocation: 'Council Bluffs, IA',
+  },
 ];
 
 // TODO: Define a function to retrieve the first chef's information
