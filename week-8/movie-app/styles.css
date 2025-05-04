@@ -9,3 +9,50 @@
 */
 
 /* Add your styles here */
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  margin: 0;
+  padding: 2em;
+  display: flex;
+  justify-content: center; /* Center the container horizontally */
+}
+
+h1 {
+  text-align: center;
+}
+
+button {
+  padding: 0.5em 1em;
+  font-size: 1em;
+  cursor: pointer; /* Show pointer on hover */
+}
+
+/* Form Styles */
+.form-container {
+  background: #fff;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+form {
+  display: flex; /* Arrange input and button side by side */
+  gap: 0.5em;
+  margin-bottom: 1em;
+}
+
+input[type="text"] {
+  flex: 1; /* Let the input grow to fill space */
+  padding: 0.5em;
+  font-size: 1em;
+}
+
+/* Error message text styling */
+#error-message {
+  color: red;
+  margin-top: 1em;
+}
